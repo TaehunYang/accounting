@@ -84,10 +84,15 @@ console.table(amortization);
 const outputTable = document.getElementById("output");
 
 amortization.forEach((amortization) => {
+  const dateStr = amortization.day;
+  const formattedDate = `${dateStr.slice(0, 4)}-${dateStr.slice(
+    4,
+    6
+  )}-${dateStr.slice(6, 8)}`;
   const row = outputTable.insertRow();
-  row.insertCell().textContent = amortization.day;
-  row.insertCell().textContent = amortization.interest1;
-  row.insertCell().textContent = amortization.interest2;
-  row.insertCell().textContent = amortization.discount;
-  row.insertCell().textContent = amortization.value;
+  row.insertCell().textContent = formattedDate;
+  row.insertCell().textContent = amortization.interest1.toLocaleString();
+  row.insertCell().textContent = amortization.interest2.toLocaleString();
+  row.insertCell().textContent = amortization.discount.toLocaleString();
+  row.insertCell().textContent = amortization.value.toLocaleString();
 });
