@@ -96,3 +96,22 @@ amortization.forEach((amortization) => {
   row.insertCell().textContent = amortization.discount.toLocaleString();
   row.insertCell().textContent = amortization.value.toLocaleString();
 });
+
+function toggleSubMenu(event) {
+  event.target.classList.toggle("active");
+}
+
+// 각 메뉴 항목에 이벤트 리스너 추가
+const menuItems = document.querySelectorAll("li");
+menuItems.forEach((item) => {
+  item.addEventListener("click", toggleSubMenu);
+});
+
+document.getElementById("toggleButton").addEventListener("click", function () {
+  const itemList = document.getElementById("itemList");
+  if (itemList.style.display === "none") {
+    itemList.style.display = "block";
+  } else {
+    itemList.style.display = "none";
+  }
+});

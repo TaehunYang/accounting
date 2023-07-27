@@ -29,3 +29,39 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
   background-color: #e6e6e6;
 }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+/* 하위 메뉴를 감추기 위한 스타일 */
+li ul {
+  display: none;
+  background-color: #007bff;
+  position: absolute;
+  margin-top: -5px;
+}
+
+/* 확장된 하위 메뉴 스타일 */
+li.active ul {
+  display: block;
+}
+
+/* 버튼 호버 효과 */
+li:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
